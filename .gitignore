@@ -5,3 +5,6 @@ node_modules
 # Executables | Binaries
 main
 *pb.go
+
+# Docker
+docker-compose.debug.yml
