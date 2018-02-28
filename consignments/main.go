@@ -54,14 +54,14 @@ func main() {
 
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
-		log.Fatal("failed to listen: %v", err)
+		log.Fatal("failed to listen:")
 	}
 
-	srv := grpc.NewServer()
+	s := grpc.NewServer()
 	pb.RegisterShippingServiceServer(s, &service{repo})
 
 	reflection.Register(s)
-	if err := srv.Serve(lis); err != nil {
-		log.Fatal("failed to serve %v", err)
+	if err := s.Serve(lis); err != nil {
+		log.Fatal("failed to serve")
 	}
 }
