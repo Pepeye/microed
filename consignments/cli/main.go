@@ -52,4 +52,13 @@ func main() {
 	}
 
 	log.Printf("Created consignment: %v", r.Created)
+
+	resp, err := client.GetConsignment(context.Background(), &pb.GetRequest{})
+	if err != nil {
+		log.Fatal("Unable to get consignments")
+	}
+
+	for _, c := range resp.Consignments {
+		log.Println(c)
+	}
 }

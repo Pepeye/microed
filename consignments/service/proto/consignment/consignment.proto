@@ -4,7 +4,7 @@ package consignment;
 
 service ShippingService {
   rpc CreateConsignment (Consignment) returns (Response);
-  rpc GetConsignment (Consignment) returns (Response);
+  rpc GetConsignment (GetRequest) returns (Response);
 }
 
 message Consignment {
