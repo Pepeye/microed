@@ -1,7 +1,14 @@
+#build stage
+FROM golang:alpine AS builder
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+RUN apk add --no-cache git
+# RUN go-wrapper download   # "go get -d -v ./..."
+# RUN go-wrapper install    # "go install -v ./..."
+
 #final stage
 FROM alpine:latest
-
-RUN mkdir /app
 WORKDIR /app
 LABEL Name=consignments Version=0.0.1
 ADD service /app/consignments
