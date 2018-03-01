@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  microed:
+    image: microed
+    build: .
+    ports:
+      - 50051:50051
